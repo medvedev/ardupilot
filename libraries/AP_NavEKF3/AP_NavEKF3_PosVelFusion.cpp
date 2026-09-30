@@ -778,7 +778,7 @@ void NavEKF3_core::FuseVelPosNED()
                 R_OBS[0] = sq(MIN(frontend->_noaidHorizNoise, 1.0f));
             } else if (tiltAlignComplete && motorsArmed) {
                 // This is a compromise between corrections for gyro errors and reducing effect of manoeuvre accelerations on tilt estimate
-                R_OBS[0] = sq(constrain_ftype(frontend->_noaidHorizNoise, 0.5f, 50.0f));
+                R_OBS[0] = sq(constrain_ftype(frontend->_noaidHorizNoise, 0.5f, EK3_NOAID_M_NSE_MAX));
             } else {
                 // Use a smaller value to give faster initial alignment
                 R_OBS[0] = sq(0.5f);

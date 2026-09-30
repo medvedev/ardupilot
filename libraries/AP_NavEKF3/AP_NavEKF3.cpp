@@ -446,7 +446,7 @@ const AP_Param::GroupInfo NavEKF3::var_info[] = {
 
     // @Param: NOAID_M_NSE
     // @DisplayName: Non-GPS operation position uncertainty (m)
-    // @Description: This sets the amount of position variation that the EKF allows for when operating without external measurements (eg GPS or optical flow). Increasing this parameter makes the EKF attitude estimate less sensitive to vehicle manoeuvres but more sensitive to IMU errors.
+    // @Description: This sets the amount of position variation that the EKF allows for when operating without external measurements (eg GPS or optical flow). Increasing this parameter makes the EKF attitude estimate less sensitive to vehicle manoeuvres but more sensitive to IMU errors. Standard builds limit the value used in flight to 50 m. Custom builds can override this ceiling with EK3_NOAID_M_NSE_MAX, up to 10000 m; the range shown here applies to standard builds.
     // @Range: 0.5 50.0
     // @User: Advanced
     // @Units: m

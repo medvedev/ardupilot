@@ -19,6 +19,9 @@
  */
 #pragma once
 
+#include <AP_HAL/AP_HAL_Boards.h>
+#include "AP_NavEKF3_config.h"
+
 #include <AP_Common/Location.h>
 #include <AP_Math/AP_Math.h>
 #include <AP_Param/AP_Param.h>
